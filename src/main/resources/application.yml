@@ -1,0 +1,33 @@
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: mysql
+    url: jdbc:mysql://172.17.0.2:3306/db_eclipse?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      '[hibernate.format_sql]': true
+  main:
+    banner-mode: 'off'
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
