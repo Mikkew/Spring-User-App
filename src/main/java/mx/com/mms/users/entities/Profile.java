@@ -20,7 +20,7 @@ public class Profile implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-    @GeneratedValue(generator = "UUID")
+	@GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(name = "profile_id", updatable = false, nullable = false, columnDefinition = "VARCHAR(255)")
 	@JsonProperty(value = "id", index = 0)
